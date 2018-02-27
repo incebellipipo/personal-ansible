@@ -19,3 +19,4 @@
   apt:
     pkg: "{{ spotify.package }}" 
     state: installed
+  become: true

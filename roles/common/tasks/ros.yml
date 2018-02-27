@@ -1,0 +1,22 @@
+---
+- include_vars:
+    file: ros.yml
+- include_vars:
+    file: distro.yml
+
+- name: Add ROS repository apt-key
+  apt_key: 
+    url: "{{ ros.apt_key }}"
+    state: present
+  become: true
+
+- name: Add ROS repository
+  apt_repository:
+    repo: "deb {{ ros.apt_uri }} {{ ubuntu.codename }} main"
+    state: present
+  become: true
+
+- name: Install desired ROS packages
+  apt:
+    pkg: "ros-{{ ros.release }}-{{ ros.package }}"
+    state: installed

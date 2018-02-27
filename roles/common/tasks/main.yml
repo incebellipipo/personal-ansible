@@ -1,0 +1,12 @@
+---
+#- name: ROS Install task
+# import_tasks: ros.yml
+
+#- name: Install spotify
+# import_tasks: spotify.yml
+
+  #- name: Install Default packages task
+  #import_tasks: install_packages.yml
+
+- name: Copy personal rc files
+  import_tasks: copy_rc_files.yml

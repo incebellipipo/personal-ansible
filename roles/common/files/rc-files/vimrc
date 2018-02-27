@@ -1,0 +1,25 @@
+if &term =~ '256color'
+      " disable Background Color Erase (BCE) so that color schemes
+      " render properly when inside 256-color tmux and GNU screen.
+      " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
+
+" color up 
+color molokai
+" color github 
+set t_Co=256
+set hlsearch
+set cursorline
+set number
+set ff=unix
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=2
+" when indenting with '>', use 4 spaces width
+set shiftwidth=2
+" On pressing tab, insert 4 spaces
+set expandtab
+
+filetype on
+au BufNewFile,BufRead *.launch set filetype=xml

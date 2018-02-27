@@ -1,0 +1,10 @@
+---
+- include_vars:
+    file: base_packages.yml
+
+- debug:
+    msg: "{{ default_packages }}"
+
+- name: Install default packages
+  apt: pkg={{ default_packages }} state=installed
+  become: true

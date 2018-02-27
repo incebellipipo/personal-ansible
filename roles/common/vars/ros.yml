@@ -1,0 +1,6 @@
+---
+ros:
+  release: kinetic
+  apt_key: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
+  apt_uri: http://packages.ros.org/ros/ubuntu
+  package: desktop-full 

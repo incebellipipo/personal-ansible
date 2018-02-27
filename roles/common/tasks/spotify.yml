@@ -1,0 +1,21 @@
+---
+- include_vars:
+    file: spotify.yml
+
+- name: Add spotify repository apt-key
+  apt_key: 
+    keyserver: "{{ spotify.apt_key.keyserver }}"
+    id: "{{ spotify.apt_key.id }}"
+    state: present
+  become: true
+
+- name: Add spotify repository
+  apt_repository:
+    repo: "deb {{ spotify.apt_uri }} stable non-free" 
+    state: present
+  become: true
+
+- name: Install spotify 
+  apt:
+    pkg: "{{ spotify.package }}" 
+    state: installed

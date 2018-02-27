@@ -1,6 +1,13 @@
+
 ---
 ros:
   release: kinetic
   apt_key: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
   apt_uri: http://packages.ros.org/ros/ubuntu
-  package: desktop-full 
+  package: desktop-full
+
+ubuntu:
+  codename: xenial
+  version: 16.04.3
+
+# user: {{ lookup('env','USER') }}

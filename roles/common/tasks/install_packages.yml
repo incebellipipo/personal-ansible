@@ -1,6 +1,6 @@
 ---
 - include_vars:
-    file: base_packages.yml
+    file: main.yml
 
 - debug:
     msg: "{{ default_packages }}"

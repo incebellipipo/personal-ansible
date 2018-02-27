@@ -2,3 +2,8 @@
 - hosts: localhost
   roles:
     - common
+    - oh-my-zsh
+    - personal-configs 
+    - ros
+    - spotify
+#     - telegram

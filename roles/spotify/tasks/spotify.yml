@@ -1,6 +1,6 @@
 ---
 - include_vars:
-    file: spotify.yml
+    file: main.yml
 
 - name: Add spotify repository apt-key
   apt_key: 

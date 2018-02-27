@@ -1,8 +1,8 @@
 ---
 - include_vars:
-    file: ros.yml
+    file: ../../common/vars/distro.yml
 - include_vars:
-    file: distro.yml
+    file: main.yml
 
 - name: Add ROS repository apt-key
   apt_key: 

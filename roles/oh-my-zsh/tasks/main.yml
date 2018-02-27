@@ -1,0 +1,30 @@
+---
+# Install Oh-my-zsh
+
+- include_vars:
+    dir: '../../common/vars'
+    files_matching: user.yml
+
+- include_vars: main.yml
+
+
+- name: Install git and zsh 
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+   - git
+   - zsh
+   - git-core
+  become: true
+
+- name: Clone oh-my-zsh repo
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/{{ user.name }}/.oh-my-zsh
+
+- name: remove standard zshrc
+  file: path=/home/{{ user.name }}/.zshrc state=absent
+
+- name: deploy .zshrc
+  template: src=files/zshrc.in dest=/home/{{ user.name }}/.zshrc owner={{ user.name }}
+
+- name: Set zsh as default shell
+  user: name={{ user.name }} shell={{ user.shell }}
+  become: true

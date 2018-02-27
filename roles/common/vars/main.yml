@@ -1,1 +1,20 @@
 ---
+default_packages:
+  - git
+  - vim
+  - nmap
+  - tmux
+  - htop
+  - zsh
+  - openvpn
+  - gcc
+  - build-essential
+  - ipython
+  - tree
+  - chromium-browser
+  - python-apt
+  - i3
+  - i3-wm
+  - i3lock
+  - i3status
+  - i3blocks

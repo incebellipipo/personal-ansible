@@ -2,11 +2,15 @@
 - file:
     path: ~/.vim/colors
     state: directory
+
+- file:
+    path: ~/.config/i3/config
+    state: directory
+
 - name: Copy personal rc files
-  copy: src={{ item.src }} dest={{ item.dest }}.ans
+  copy: src={{ item.src }} dest={{ item.dest }}
   with_items:
     - { src: files/rc-files/vimrc, dest: ~/.vimrc }
-    - { src: files/rc-files/zshrc, dest: ~/.zshrc }
     - { src: files/rc-files/tmux.conf, dest: ~/.tmux.conf }
     - { src: files/rc-files/vim/colors/molokai.vim, dest: ~/.vim/colors/molokai.vim } 
     - { src: files/config-files/i3/config, dest: ~/.config/i3/config }

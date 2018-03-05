@@ -20,3 +20,9 @@
   apt:
     pkg: "ros-{{ ros.release }}-{{ ros.package }}"
     state: installed
+
+- name: Install qt creator ROS plugin
+  apt:
+    pkg: libqtermwidget5-0
+    state: installed
+

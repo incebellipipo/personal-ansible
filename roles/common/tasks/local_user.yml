@@ -1,0 +1,11 @@
+---
+- include_vars:
+    file: user.yml
+
+- user:
+    name: "{{ user.name }}"
+    comment: "{{ user.comment }}"
+    shell: "{{ user.shell }}"
+    groups: "{{ user.groups }}"
+    append: yes 
+  become: true

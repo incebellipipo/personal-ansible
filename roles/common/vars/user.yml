@@ -4,3 +4,4 @@ user:
   comment: "Emir Cem Gezer"
   uid: 1001
   shell: /usr/bin/zsh
+  groups: docker, sudo, adm, plugdev, lpadmin, sambashare, cdrom, dip
